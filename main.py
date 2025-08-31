@@ -28,11 +28,14 @@ def main():
     print(f"Found {words} total words") 
 
     print("--------- Character Count -------")
-    characters = num_of_chars(get_book_text("books/frankenstein.txt"))
+    characters = num_of_chars(get_book_text(book))
     sort_dict(characters)
 
     for letter, count in characters.items():
-        print(f"{letter}: {count}")
+        if letter == "\n":
+            print(f"Newline: {count}")
+        else:
+            print(f"{letter}: {count}")
     
 if __name__ == "__main__":
     main()
